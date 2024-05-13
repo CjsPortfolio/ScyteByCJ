@@ -8,7 +8,7 @@ module.exports.config = {
     description: "Gpt architecture",
     hasPrefix: false,
     commandCategory: "GPT4",
-    cooldowns: 5,
+    cooldowns: 3,
 };
 
 module.exports.run = async function ({ api, event, args }) {
@@ -24,7 +24,7 @@ module.exports.run = async function ({ api, event, args }) {
         if (!prompt) {
             return api.sendMessage('ℹ Please type a question.', event.threadID, messageID);
         }
-        api.sendMessage('🔍 Searching your question please wait...', event.threadID);
+        api.sendMessage('🔍 Please wait...', event.threadID);
 
         // Delay
         await new Promise(resolve => setTimeout(resolve, 2000)); // Adjust the delay time as needed
@@ -37,7 +37,7 @@ module.exports.run = async function ({ api, event, args }) {
             const generatedText = response.data.response;
 
             // Ai Answer Here
-            api.sendMessage(`🎓 𝐆𝐏𝐓-4 ( 𝐀𝐈 )\n━━━━━━━━━━━━━━━━\n📝 answer: ➪ ${generatedText}\n━━━━━━━━━━━━━━━━\n❇ This autobot is created by: AJ Chicano\n✳ You can create your own bot here ➪ https://scyte-49lp.onrender.com`, event.threadID, messageID);
+            api.sendMessage(`🎓 𝐆𝐏𝐓-4 ( 𝐀𝐈 )\n━━━━━━━━━━━━━━━━\n📝 answer: ➪ ${generatedText}\n━━━━━━━━━━━━━━━━\n❇`, event.threadID, messageID);
         } else {
             console.error('API response did not contain expected data:', response.data);
             api.sendMessage(`❌ 𝙰𝙽 𝙴𝚁𝚁𝙾𝚁 𝙾𝙲𝙲𝚄𝚁𝚁𝙴𝙳 𝚆𝙷𝙸𝙻𝙴 𝙶𝙴𝙽𝙴𝚁𝙰𝚃𝙸𝙽𝙶 𝚃𝙷𝙴 𝚃𝙴𝚇𝚃 𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴. 𝙿𝙻𝙴𝙰𝚂𝙴 𝚃𝚁𝚈 𝙰𝙶𝙰𝙸𝙽 𝙻𝙰𝚃𝙴𝚁. 𝚁𝙴𝚂𝙿𝙾𝙽𝚂𝙴 𝙳𝙰𝚃𝙰: ${JSON.stringify(response.data)}`, event.threadID, messageID);
