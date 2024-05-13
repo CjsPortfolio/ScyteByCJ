@@ -6,7 +6,7 @@ module.exports.config = {
     hasPermission: 0,
     credits: "AJ",//api by jerome
     description: "Gpt architecture",
-    hasPrefix: false,
+    hasPrefix: true,
     commandCategory: "GPT4",
     cooldowns: 3,
 };
