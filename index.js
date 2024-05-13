@@ -284,8 +284,8 @@ app.listen(port, () => {
 "✖ [■■■■■■■■■■■■░░░]",
 "✖ [■■■■■■■■■■■■■░░]",
 "✖ [■■■■■■■■■■■■■■░]",
-"✖ [■■■■■■■■■■■■■■■]"
-${port}`);
+"✖ [■■■■■■■■■■■■■■■]",
+"Your Server is running at: "${port}`);
 });
 process.on('unhandledRejection', (reason) => {
 	console.error('Unhandled Promise Rejection:', reason);
