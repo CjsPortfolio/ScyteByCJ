@@ -5,6 +5,7 @@ module.exports.config = {
   name: "geminipic",
   version: "6.2",
   permission: 0,
+  hasPrefix: true,
   credits: "Hazeyy",
   description: "( 𝙶𝚎𝚖𝚒𝚗𝚒 𝙿𝚛𝚘 𝚅𝚒𝚜𝚒𝚘𝚗: Used this ai if your want to reply with a photo. )",
   commandCategory: "𝚗𝚘 𝚙𝚛𝚎𝚏𝚒𝚡",
