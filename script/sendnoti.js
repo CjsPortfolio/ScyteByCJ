@@ -21,7 +21,7 @@ module.exports.run = async function ({ api, event, args, admin }) {
 	async function sendMessage(thread) {
 		try {
 			await api.sendMessage(
-`🟢🟡🔴\n ----------------\n『 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍 』\n\n ----------------\n𝑴𝒆𝒔𝒔𝒂𝒈𝒆 𝒇𝒓𝒐𝒎 𝒂𝒅𝒎𝒊𝒏:「${custom}」\n _________________________`,
+`---------------\n『 𝐍𝐎𝐓𝐈𝐅𝐈𝐂𝐀𝐓𝐈𝐎𝐍 』\n\n ----------------\n𝒂𝒅𝒎𝒊𝒏:「${custom}」\n _________________________`,
 				thread.threadID
 			);
 			sentCount++;
@@ -54,7 +54,7 @@ module.exports.run = async function ({ api, event, args, admin }) {
 	}
 
 	if (sentCount > 0) {
-		api.sendMessage(`› Sent the notification successfully.`, event.threadID);
+		api.sendMessage(`✅ Sent the notification to all group chats successfully.`, event.threadID);
 	} else {
 		api.sendMessage(
 			"› No eligible group threads found to send the message to.",
