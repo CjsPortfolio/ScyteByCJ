@@ -26,7 +26,7 @@ module.exports.run = async function({
       data
     } = await axios.get(`http://94.130.129.40:8370/gpt4?prompt=${encodeURIComponent(input)}&uid=100013036275290`);
     const response = data.gpt4;
-    api.sendMessage(`GPT 4 (AI): \n\n ${response}\n——————————————`, event.threadID, event.messageID);
+    api.sendMessage(`GPT 4 (AI): \n\n ${response}\n—————————————`, event.threadID, event.messageID);
   } catch (error) {
     api.sendMessage('An error occurred while processing your request.', event.threadID, event.messageID);
   }
